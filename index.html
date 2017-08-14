@@ -11,14 +11,18 @@
     </header>
     <section class="player">
       <audio class="music-player" controls="controls" src=""></audio>
+      <div class="now-playing">
+        Now Playing:
+      </div>
     </section>
     <section class="search">
-      <form class="search-form">
-        <input type="text" name="" value="">
-        <button type="button" name="button">Submit</button>
+      <form class="search-form" onsubmit="formSubmit()">
+        <input class='input' type="text" name="" value="">
+        <button class="button" type="button" name="button">Submit</button>
       </form>
     </section>
-    <section class="results"></section>
+    <section class="results">
+    </section>
   </div>
   <script src="main.js"></script>
 </body>

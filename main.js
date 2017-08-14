@@ -8,43 +8,89 @@
 // 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
 
+let search = document.querySelector('.input');
+let button = document.querySelector('.button');
+let results = document.querySelector('.results');
+let audio = document.querySelector('.music-player');
+let playing = document.querySelector('.now-playing');
+console.log(audio);
+console.log(audio.src);
 
-
-  /*
-
+button.addEventListener("click", function(){
+  let search_item = search.value;
   let url = 'https://itunes.apple.com/search?term=';
-  let fullurl = url + search;
+  let limit = '&limit=15'
+  let fullurl = url + search_item + limit;
   console.log(fullurl);
-fetch(fullurl)
-    .then(function(response) {
-        if (response.status !== 200) {
-          console.log('Looks like there was a problem. Status Code: ' +
-            response.status);
-          return;
-        } else {
-          console.log("everything is fine");
-        }
-        response.json().then(function(data) {
-          console.log(data);
-          document.querySelector(".results").innerHTML = "";
-          for(let i = 0; i < data.results.length; i++){
-            let artwork = data.results[i].artworkUrl100;
-            let track = data.results[i].trackName;
-            let artist = data.results[i].artistName;
-            let new_box = document.createElement("div");
-            new_box.setAttribute("class", "result");
-            let result = `
-            <img src="${artwork}">
-            <p class="song-title">${track}</p>
-            <p class="band-name">${artist}</p>
-            `;
-            new_box.innerHTML = result;
-            results.appendChild(new_box);
+  fetch(fullurl)
+      .then(function(response) {
+          if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+              response.status);
+            return;
           }
-        });
+          response.json().then(function(data) {
+            console.log(data);
+            results.innerHTML = "";
+            for(let i = 0; i < data.results.length; i++){
+              let artwork = data.results[i].artworkUrl100;
+              let track = data.results[i].trackName;
+              let artist = data.results[i].artistName;
+              let sample = data.results[i].previewUrl;
+              let new_box = document.createElement("div");
+              new_box.setAttribute("class", "result");
+              new_box.addEventListener("click", function(){
+                audio.src = sample;
+                playing.innerHTML = "Now Playing: " + artist + " - " + track;
+              });
+              let result = `
+              <img src="${artwork}">
+              <p class="song-title">${track}</p>
+              <p class="band-name">${artist}</p>
+              `;
+              new_box.innerHTML = result;
+              results.appendChild(new_box);
+            };
+          })
+        })
       });
 
 
-    }, true);
-
-  */
+function formSubmit() {
+  let search_item = search.value;
+  let url = 'https://itunes.apple.com/search?term=';
+  let limit = '&limit=15'
+  let fullurl = url + search_item + limit;
+  console.log(fullurl);
+  fetch(fullurl)
+      .then(function(response) {
+          if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+              response.status);
+            return;
+          }
+          response.json().then(function(data) {
+            console.log(data);
+            results.innerHTML = "";
+            for(let i = 0; i < data.results.length; i++){
+              let artwork = data.results[i].artworkUrl100;
+              let track = data.results[i].trackName;
+              let artist = data.results[i].artistName;
+              let sample = data.results[i].previewUrl;
+              let new_box = document.createElement("div");
+              new_box.setAttribute("class", "result");
+              new_box.addEventListener("click", function(){
+                audio.src = sample;
+                playing.innerHTML = "Now Playing: " + artist + " - " + track;
+              });
+              let result = `
+              <img src="${artwork}">
+              <p class="song-title">${track}</p>
+              <p class="band-name">${artist}</p>
+              `;
+              new_box.innerHTML = result;
+              results.appendChild(new_box);
+            };
+          })
+        })
+}
