@@ -85,6 +85,7 @@ hr {
   width: 14vw;
   margin-bottom: 2vh;
   background-color: #e0e0e0;
+  border-radius: 5%;
   background-image: url("https://www.transparenttextures.com/patterns/moulin.png");
 }
 
