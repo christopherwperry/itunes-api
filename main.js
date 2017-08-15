@@ -27,17 +27,23 @@ button.addEventListener("click", function(){
             return;
           }
           response.json().then(function(data) {
+            console.log(data);
             results.innerHTML = "";
             for(let i = 0; i < data.results.length; i++){
               let artwork = data.results[i].artworkUrl100;
               let track = data.results[i].trackName;
               let artist = data.results[i].artistName;
               let sample = data.results[i].previewUrl;
+              let page = data.results[i].artistViewUrl;
               let new_box = document.createElement("div");
               new_box.setAttribute("class", "result");
               new_box.addEventListener("click", function(){
                 audio.src = sample;
-                playing.innerHTML = "Now Playing: " + artist + " - " + track;
+                let template = `
+                <p class="now-playing">Now Playing: ${artist} - ${track}</p>
+                <a class="band-page" href="${page}">Artist Page</a>
+                `
+                playing.innerHTML = template;
               });
               let result = `
               <img src="${artwork}">
