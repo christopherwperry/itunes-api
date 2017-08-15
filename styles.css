@@ -20,6 +20,10 @@ h1 {
   text-align: left;
   margin-left: 5vw;
   font-size: 2vw;
+  margin-top: 3vh;
+}
+
+audio {
 }
 
 
@@ -27,22 +31,32 @@ hr, .music-player, .results, .search{
  width: 80vw;
 }
 
+hr {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
 .search {
   margin-left: 5vw;
+
 }
 
 .search-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
 }
 
 .input {
   width: 70vw;
+  height: 4vh;
+  font-size: 2vh;
 }
 
 .button {
   width: 9vw;
+  font-size: 2vh;
 }
 
 .results {
@@ -55,4 +69,8 @@ hr, .music-player, .results, .search{
 
 .result {
   width: 14vw;
+}
+
+p {
+  margin: 0;
 }

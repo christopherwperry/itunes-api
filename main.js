@@ -84,7 +84,7 @@ function formSubmit() {
                 playing.innerHTML = "Now Playing: " + artist + " - " + track;
               });
               let result = `
-              <img src="${artwork}">
+              <img class="album-cover" src="${artwork}">
               <p class="song-title">${track}</p>
               <p class="band-name">${artist}</p>
               `;
