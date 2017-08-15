@@ -13,15 +13,12 @@ let button = document.querySelector('.button');
 let results = document.querySelector('.results');
 let audio = document.querySelector('.music-player');
 let playing = document.querySelector('.now-playing');
-console.log(audio);
-console.log(audio.src);
 
 button.addEventListener("click", function(){
   let search_item = search.value;
   let url = 'https://itunes.apple.com/search?term=';
   let limit = '&limit=15'
   let fullurl = url + search_item + limit;
-  console.log(fullurl);
   fetch(fullurl)
       .then(function(response) {
           if (response.status !== 200) {
@@ -30,7 +27,6 @@ button.addEventListener("click", function(){
             return;
           }
           response.json().then(function(data) {
-            console.log(data);
             results.innerHTML = "";
             for(let i = 0; i < data.results.length; i++){
               let artwork = data.results[i].artworkUrl100;
