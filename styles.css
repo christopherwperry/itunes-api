@@ -1,6 +1,48 @@
 body {
-  background-color: #FFFFFF;
   text-align: center;
+  margin: auto 0;
+  background-color: #060912;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  font-family: 'Saira', sans-serif;
+  color: #c7c7c7;
+}
+
+.container {
+  margin-right: 5vw;
+  margin-left: 5vw;
+}
+
+h1 {
+  font-size: 5vw;
+}
+
+.now-playing {
+  text-align: left;
+  margin-left: 5vw;
+  font-size: 2vw;
+}
+
+
+hr, .music-player, .results, .search{
+ width: 80vw;
+}
+
+.search {
+  margin-left: 5vw;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input {
+  width: 70vw;
+}
+
+.button {
+  width: 9vw;
 }
 
 .results {
@@ -8,9 +50,9 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 90vw;
+  margin-left: 5vw;
 }
 
 .result {
-  width: 16vw;
+  width: 14vw;
 }
