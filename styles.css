@@ -1,9 +1,10 @@
 body {
   text-align: center;
   margin: auto 0;
-  background-image: url("pink-dust.png");
+  background-image: url("images/pink-dust.png");
   font-family: 'Saira', sans-serif;
   color: #c7c7c7;
+  font-weight: lighter;
 }
 
 .container {
@@ -27,6 +28,10 @@ header img{
   margin-top: 2.8vh;
 }
 
+hr {
+  border-color: #45BEEB;
+}
+
 h1 {
   font-size: 5vw;
   margin-top: 0;
@@ -37,9 +42,14 @@ h1 {
   font-weight: lighter;
 }
 
-.now-playing {
-  font-size: 2vw;
+.now-playing, a {
+  font-size: 1.5vw;
   margin: 0;
+  color: #6F42FF;
+}
+
+a {
+  color: #2857FF;
 }
 
 hr, .music-player, .results, .search{
@@ -86,19 +96,18 @@ hr {
   padding-top: 2vh;
   width: 14vw;
   margin-bottom: 2vh;
-  background-color: #e0e0e0;
   border-radius: 5%;
-  background-image: url("https://www.transparenttextures.com/patterns/moulin.png");
+  background-image: url('images/brickwall.png');
 }
 
 .song-title {
   margin: 0;
   font-size: 2vh;
-  color: #FFFFFF;
+  color: #6F42FF;
 }
 
 .band-name {
   margin: 0;
   font-size: 2.5vh;
-  color: #a3a3a3;
+  color: #2857FF;
 }
