@@ -1,11 +1,11 @@
-//Establish variables to pull key elements from HTML to add function to
+//Establish variables to pull key elements from HTML to add function to.
 let search = document.querySelector('.input');
 let button = document.querySelector('.button');
 let results = document.querySelector('.results');
 let audio = document.querySelector('.music-player');
 let playing = document.querySelector('.now-playing');
 
-//Event listener responds to click on submit button and performs fetch of 
+//Event listener responds to click on submit button and performs fetch of search term that is entered into input.
 button.addEventListener("click", function(){
   let search_item = search.value;
   let url = 'https://itunes.apple.com/search?term=';
